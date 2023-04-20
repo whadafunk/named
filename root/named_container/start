@@ -1,0 +1,9 @@
+#! /bin/bash
+docker container run \
+	--name names \
+	--hostname names \
+	-it \
+	-v $(pwd):/var/named/orig \
+	--dns 127.0.0.1 \
+	--entrypoint /bin/sh \
+	names:latest
